@@ -123,4 +123,86 @@ module controller #(parameter CTRL_SIZE = 21)(
 	
 endmodule
 
+// module controller #(
+//     parameter W_CTRL = 16, // Control word width
+//     parameter W_I = 5      // Control address width
+// )(
+//     input  wire         clk,      // Clock signal
+//     input  wire         rstn,     // Active low reset
+//     input  wire         stay,     // Hold current state
+//     input  wire [6:0]   opcode,   // Instruction opcode
+//     input  wire [2:0]   func3,    // Instruction function 3 field
+//     input  wire         func7,    // Instruction function 7 field MSB
+//     output reg  [W_CTRL-1:0] ctrl // Control word output
+// );
+
+//     // Control store memory
+//     reg [W_CTRL-1:0] control_store [0:(2**W_I)-1];
+
+//     // Control address signal
+//     reg [W_I-1:0] control_addr;
+
+//     // Sequential logic for control address
+//     always @(posedge clk or negedge rstn) begin
+//         if (!rstn)
+//             control_addr <= 0;
+//         else if (!stay)
+//             control_addr <= control_addr + 1;
+//     end
+
+//     // Combinational logic to generate control address based on opcode and func3
+//     always @(*) begin
+//         case (opcode)
+//             7'b0110011: // R-type
+//                 case (func3)
+//                     3'b000: control_addr = func7 ? 5'b00001 : 5'b00000; // ADD/SUB
+//                     3'b111: control_addr = 5'b00010; // AND
+//                     3'b110: control_addr = 5'b00011; // OR
+//                     default: control_addr = 5'b11111; // Invalid
+//                 endcase
+//             7'b0010011: // I-type (arithmetic)
+//                 case (func3)
+//                     3'b000: control_addr = 5'b00100; // ADDI
+//                     3'b100: control_addr = 5'b00101; // XORI
+//                     3'b110: control_addr = 5'b00110; // ORI
+//                     default: control_addr = 5'b11111; // Invalid
+//                 endcase
+//             7'b0000011: // Load
+//                 control_addr = 5'b01000; // LOAD
+//             7'b0100011: // Store
+//                 control_addr = 5'b01001; // STORE
+//             default:
+//                 control_addr = 5'b11111; // Invalid
+//         endcase
+//     end
+
+//     // Sequential logic for control word output
+//     always @(posedge clk or negedge rstn) begin
+//         if (!rstn)
+//             ctrl <= 0;
+//         else
+//             ctrl <= control_store[control_addr];
+//     end
+
+//     // Initialize control store
+//     initial begin
+//         integer i;
+//         for (i = 0; i < (2**W_I); i = i + 1) begin
+//             control_store[i] = 0; // Default all entries to zero
+//         end
+        
+//         // Define specific control word values
+//         control_store[5'b00000] = 16'h0001; // ADD
+//         control_store[5'b00001] = 16'h0002; // SUB
+//         control_store[5'b00010] = 16'h0003; // AND
+//         control_store[5'b00011] = 16'h0004; // OR
+//         control_store[5'b00100] = 16'h0005; // ADDI
+//         control_store[5'b00101] = 16'h0006; // XORI
+//         control_store[5'b00110] = 16'h0007; // ORI
+//         control_store[5'b01000] = 16'h0008; // LOAD
+//         control_store[5'b01001] = 16'h0009; // STORE
+//         control_store[5'b11111] = 16'hFFFF; // INVALID
+//     end
+
+// endmodule
 
