@@ -1,35 +1,36 @@
-`include "controls.sv"
+`include "controls.sv" 
 
-module alu #(
-	parameter WIDTH = 32,
-	parameter ALU_SEL = 4
-)(
-	input logic signed [WIDTH-1:0] bus_a, bus_b,	
-	input logic [ALU_SEL-1:0] alu_sel,
-	output logic signed [WIDTH-1:0] alu_out,
-	output logic alu_zero, alu_neg
+module ALU (
+  input logic signed [DATA_WIDTH-1:0] in_a, in_b,
+  input logic [OP_SEL-1:0] operation,
+  output logic signed [DATA_WIDTH-1:0] result,
+  output logic zero_flag, negative_flag
 );
-	
-	always_comb begin
-		unique case (alu_sel)
-			`ALU_ADD: alu_out = bus_a + bus_b;
-			`ALU_SUB: alu_out = bus_a - bus_b;
-			`ALU_SLL: alu_out = bus_a << $unsigned(bus_b);
-			`ALU_SRL: alu_out = bus_a >> $unsigned(bus_b);
-			`ALU_SRA: alu_out = bus_a >>> $unsigned(bus_b);	// Arithmetic right shift retains MSB
-			`ALU_AND: alu_out = bus_a & bus_b;
-			`ALU_OR: alu_out = bus_a | bus_b;
-			`ALU_XOR: alu_out = bus_a ^ bus_b;
-			`ALU_SLT: alu_out = bus_a < bus_b;
-			`ALU_SLTU: alu_out = $unsigned(bus_a) < $unsigned(bus_b);
-			`ALU_A:	 alu_out = bus_a;
-			`ALU_B:	 alu_out = bus_b;
-			`ALU_MUL: alu_out = $unsigned(bus_a) * $unsigned(bus_b);
-			default: alu_out = 'b0;
-		endcase
-	end
-	
-	assign alu_zero = (alu_out == 0);
-	assign alu_neg = (alu_out < 0);
-	
+
+  // Define parameters as localparam
+  localparam DATA_WIDTH  = 32;
+  localparam OP_SEL       = 4;
+
+  always_comb begin
+    unique case (operation)
+      `ADD: result = in_a + in_b;
+      `SUB: result = in_a - in_b;
+      `SLL: result = in_a << $unsigned(in_b);
+      `SRL: result = in_a >> $unsigned(in_b);
+      `SRA: result = in_a >>> $unsigned(in_b);  // Arithmetic right shift retains MSB
+      `AND: result = in_a & in_b;
+      `OR: result = in_a | in_b;
+      `XOR: result = in_a ^ in_b;
+      `SLT: result = in_a < in_b;
+      `SLTU: result = $unsigned(in_a) < $unsigned(in_b);
+      `LOAD_A: result = in_a;
+      `LOAD_B: result = in_b;
+      `MUL: result = $unsigned(in_a) * $unsigned(in_b);
+      default: result = 'b0;
+    endcase
+  end
+
+  assign zero_flag = (result == 0);
+  assign negative_flag = (result < 0);
+
 endmodule
