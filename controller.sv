@@ -123,86 +123,84 @@ module controller #(parameter CTRL_SIZE = 21)(
 	
 endmodule
 
-// module controller #(
-//     parameter W_CTRL = 16, // Control word width
-//     parameter W_I = 5      // Control address width
-// )(
-//     input  wire         clk,      // Clock signal
-//     input  wire         rstn,     // Active low reset
-//     input  wire         stay,     // Hold current state
-//     input  wire [6:0]   opcode,   // Instruction opcode
-//     input  wire [2:0]   func3,    // Instruction function 3 field
-//     input  wire         func7,    // Instruction function 7 field MSB
-//     output reg  [W_CTRL-1:0] ctrl // Control word output
+// module controller (
+//     input wire clk,
+//     input wire reset,
+//     input wire [31:0] instruction,
+//     output reg [31:0] ctrl_signals
 // );
 
-//     // Control store memory
-//     reg [W_CTRL-1:0] control_store [0:(2**W_I)-1];
+//     // Parameterized constants for instruction types and opcodes
+//     localparam TYPE_R = 3'b000;
+//     localparam TYPE_I_COMP = 3'b001;
+//     localparam TYPE_I_LOAD = 3'b010;
+//     localparam TYPE_S = 3'b011;
+//     localparam TYPE_B = 3'b100;
+//     localparam TYPE_J = 3'b101;
 
-//     // Control address signal
-//     reg [W_I-1:0] control_addr;
+//     // Control store parameters
+//     localparam CTRL_STORE_SIZE = 64;
+//     localparam CTRL_WIDTH = 32;
 
-//     // Sequential logic for control address
-//     always @(posedge clk or negedge rstn) begin
-//         if (!rstn)
-//             control_addr <= 0;
-//         else if (!stay)
-//             control_addr <= control_addr + 1;
-//     end
+//     // Control store declaration
+//     reg [CTRL_WIDTH-1:0] ctrl_store [0:CTRL_STORE_SIZE-1];
 
-//     // Combinational logic to generate control address based on opcode and func3
-//     always @(*) begin
-//         case (opcode)
-//             7'b0110011: // R-type
-//                 case (func3)
-//                     3'b000: control_addr = func7 ? 5'b00001 : 5'b00000; // ADD/SUB
-//                     3'b111: control_addr = 5'b00010; // AND
-//                     3'b110: control_addr = 5'b00011; // OR
-//                     default: control_addr = 5'b11111; // Invalid
-//                 endcase
-//             7'b0010011: // I-type (arithmetic)
-//                 case (func3)
-//                     3'b000: control_addr = 5'b00100; // ADDI
-//                     3'b100: control_addr = 5'b00101; // XORI
-//                     3'b110: control_addr = 5'b00110; // ORI
-//                     default: control_addr = 5'b11111; // Invalid
-//                 endcase
-//             7'b0000011: // Load
-//                 control_addr = 5'b01000; // LOAD
-//             7'b0100011: // Store
-//                 control_addr = 5'b01001; // STORE
-//             default:
-//                 control_addr = 5'b11111; // Invalid
-//         endcase
-//     end
+//     // Control address generation signals
+//     reg [5:0] ctrl_addr;
+//     reg [5:0] next_addr;
+//     reg stay;
 
-//     // Sequential logic for control word output
-//     always @(posedge clk or negedge rstn) begin
-//         if (!rstn)
-//             ctrl <= 0;
-//         else
-//             ctrl <= control_store[control_addr];
-//     end
+//     // Internal signal to hold the current control word
+//     reg [CTRL_WIDTH-1:0] cur_ctrl;
 
 //     // Initialize control store
 //     initial begin
-//         integer i;
-//         for (i = 0; i < (2**W_I); i = i + 1) begin
-//             control_store[i] = 0; // Default all entries to zero
+//         ctrl_store[6'b000000] = 32'b00000000000000000000000000000000; // NOP
+//         ctrl_store[6'b000001] = 32'b00000000000000000000000000000001; // ADD
+//         ctrl_store[6'b000010] = 32'b00000000000000000000000000000010; // SUB
+//         ctrl_store[6'b000011] = 32'b00000000000000000000000000000100; // LW
+//         ctrl_store[6'b000100] = 32'b00000000000000000000000000001000; // SW
+//         ctrl_store[6'b000101] = 32'b00000000000000000000000000010000; // BEQ
+//         ctrl_store[6'b000110] = 32'b00000000000000000000000000100000; // BNE
+//         ctrl_store[6'b000111] = 32'b00000000000000000000000001000000; // JAL
+//         // Add more microinstructions as needed...
+//     end
+
+//     // Opcode and function field extraction
+//     wire [6:0] opcode = instruction[6:0];
+//     wire [2:0] func3 = instruction[14:12];
+//     wire func7 = instruction[30];
+
+//     // Control address computation
+//     always @(*) begin
+//         case (opcode)
+//             7'b0110011: ctrl_addr = {TYPE_R, func3}; // R-type instructions
+//             7'b0010011: ctrl_addr = {TYPE_I_COMP, func3}; // I-type (computational)
+//             7'b0000011: ctrl_addr = {TYPE_I_LOAD, func3}; // I-type (load)
+//             7'b0100011: ctrl_addr = {TYPE_S, func3}; // S-type (store)
+//             7'b1100011: ctrl_addr = {TYPE_B, func3}; // B-type (branch)
+//             7'b1101111: ctrl_addr = {TYPE_J, 3'b000}; // J-type (JAL)
+//             default: ctrl_addr = 6'b000000; // Default to NOP
+//         endcase
+//     end
+
+//     // Control signal assignment
+//     always @(posedge clk or posedge reset) begin
+//         if (reset) begin
+//             cur_ctrl <= ctrl_store[0]; // Reset to NOP
+//         end else begin
+//             if (stay)
+//                 cur_ctrl <= ctrl_store[next_addr];
+//             else
+//                 cur_ctrl <= ctrl_store[ctrl_addr];
 //         end
-        
-//         // Define specific control word values
-//         control_store[5'b00000] = 16'h0001; // ADD
-//         control_store[5'b00001] = 16'h0002; // SUB
-//         control_store[5'b00010] = 16'h0003; // AND
-//         control_store[5'b00011] = 16'h0004; // OR
-//         control_store[5'b00100] = 16'h0005; // ADDI
-//         control_store[5'b00101] = 16'h0006; // XORI
-//         control_store[5'b00110] = 16'h0007; // ORI
-//         control_store[5'b01000] = 16'h0008; // LOAD
-//         control_store[5'b01001] = 16'h0009; // STORE
-//         control_store[5'b11111] = 16'hFFFF; // INVALID
+//     end
+
+//     // Extract control signals from the control word
+//     always @(*) begin
+//         ctrl_signals = cur_ctrl[31:0];
 //     end
 
 // endmodule
+
 
