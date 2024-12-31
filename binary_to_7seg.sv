@@ -1,39 +1,53 @@
 
-module binary_to_7seg ( 
-	input logic [3:0] data_in,
-	output logic [6:0] data_out
+// module binary_to_7seg ( 
+// 	input logic [3:0] data_in,
+// 	output logic [6:0] data_out
+// );
+//     // Make a LUT to convert digits to 7 segment output
+//     // Input - 4 bits, output - 7 bits
+//     logic [15:0][6:0] lut_7seg;
+
+//     // Output is gfedcba
+//     assign lut_7seg[0] = 7'b0111111;
+//     assign lut_7seg[1] = 7'b0000110;
+//     assign lut_7seg[2] = 7'b1011011;
+//     assign lut_7seg[3] = 7'b1001111;
+//     assign lut_7seg[4] = 7'b1100110;
+//     assign lut_7seg[5] = 7'b1101101;
+//     assign lut_7seg[6] = 7'b1111101;
+//     assign lut_7seg[7] = 7'b0000111;
+//     assign lut_7seg[8] = 7'b1111111;
+//     assign lut_7seg[9] = 7'b1101111;
+// 	 assign lut_7seg[10] = 7'b1110111;	//A
+// 	 assign lut_7seg[11] = 7'b1111100;	//b
+// 	 assign lut_7seg[12] = 7'b0111001;	//C	
+// 	 assign lut_7seg[13] = 7'b1011110;	//d
+// 	 assign lut_7seg[14] = 7'b1111001;	//E
+//     assign lut_7seg[15] = 7'b1110001;	//F
+	 
+// 	 assign data_out = ~lut_7seg[data_in];
+	 
+// endmodule
+module disp_7seg (
+    input logic [3:0] data_in,
+    output logic [6:0] segments
 );
-    // Make a LUT to convert digits to 7 segment output
-    // Input - 4 bits, output - 7 bits
-    logic [15:0][6:0] lut_7seg;
 
-    // Output is gfedcba
-    assign lut_7seg[0] = 7'b0111111;
-    assign lut_7seg[1] = 7'b0000110;
-    assign lut_7seg[2] = 7'b1011011;
-    assign lut_7seg[3] = 7'b1001111;
-    assign lut_7seg[4] = 7'b1100110;
-    assign lut_7seg[5] = 7'b1101101;
-    assign lut_7seg[6] = 7'b1111101;
-    assign lut_7seg[7] = 7'b0000111;
-    assign lut_7seg[8] = 7'b1111111;
-    assign lut_7seg[9] = 7'b1101111;
-	 assign lut_7seg[10] = 7'b1110111;	//A
-	 assign lut_7seg[11] = 7'b1111100;	//b
-	 assign lut_7seg[12] = 7'b0111001;	//C	
-	 assign lut_7seg[13] = 7'b1011110;	//d
-	 assign lut_7seg[14] = 7'b1111001;	//E
-    assign lut_7seg[15] = 7'b1110001;	//F
-	 
-	 assign data_out = ~lut_7seg[data_in];
-	 
+    // Lookup table for digits 0-9
+    localparam [9:0][6:0] lut_7seg = {
+        7'b0111111, // 0
+        7'b0000110, // 1
+        7'b1011011, // 2
+        7'b1001111, // 3
+        7'b1100110, // 4
+        7'b1101101, // 5
+        7'b1111101, // 6
+        7'b0000111, // 7
+        7'b1111111, // 8
+        7'b1101111  // 9
+    };
+
+    // Output assignment (inverting for common anode)
+    assign segments = ~lut_7seg[data_in[3:0]];
+
 endmodule
-
-/*
-Seven segment display
-    a
-f       b
-    g
-e       c
-    d
-*/
