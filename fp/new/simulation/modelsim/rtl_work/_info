@@ -1,0 +1,219 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/simulation/modelsim
+vbinary_to_7seg
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1736069188
+!i10b 1
+!s100 zcbYDP3Z;8^dh<SH4UbKH0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IJajhgI`aC^CNKW`gH[?@62
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1736043190
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/binary_to_7seg.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/binary_to_7seg.sv
+!i122 6
+L0 2 29
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1736069188.000000
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/binary_to_7seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new|C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/binary_to_7seg.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work {+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new}
+Z9 tCvgOpt 0
+vfloating_point_adder
+R1
+!s110 1736069187
+!i10b 1
+!s100 dek^eiNPQYO7h?o`PIa3[3
+R3
+I^?m^<CBjW`Poa3^j_X_782
+R4
+S1
+R0
+w1736062219
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/floating_point_adder.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/floating_point_adder.sv
+!i122 0
+Z10 L0 1 60
+R5
+r1
+!s85 0
+31
+Z11 !s108 1736069187.000000
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/floating_point_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp|C:/SJ/Sem 7/EN3021_Digital System Design/fp/floating_point_adder.sv|
+!i113 1
+R7
+!s92 -sv -work work {+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp}
+R9
+vfloating_point_divider
+R1
+R2
+!i10b 1
+!s100 LmIdkHi_:n_CaC>4mSSm43
+R3
+IH3HP?1ORk;[^WH]GN5;CP0
+R4
+S1
+R0
+w1736062553
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_divider.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_divider.sv
+!i122 3
+L0 1 48
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_divider.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new|C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_divider.sv|
+!i113 1
+R7
+R8
+R9
+vfloating_point_multiplier
+R1
+R2
+!i10b 1
+!s100 gYVVQGHS^fkFzVVRk8MCA1
+R3
+Io8BWXKc?G:Zle1X8VRT[W0
+R4
+S1
+R0
+w1736062508
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_multiplier.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_multiplier.sv
+!i122 2
+L0 1 44
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_multiplier.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new|C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_multiplier.sv|
+!i113 1
+R7
+R8
+R9
+vfloating_point_subtractor
+R1
+R2
+!i10b 1
+!s100 UEKaU4B>Fe?2X>_8XW[@V2
+R3
+I2aJEIoaAaNBo:kBCfh5W>2
+R4
+S1
+R0
+w1736062457
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_subtractor.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_subtractor.sv
+!i122 1
+R10
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_subtractor.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new|C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_subtractor.sv|
+!i113 1
+R7
+R8
+R9
+vfpga
+R1
+R2
+!i10b 1
+!s100 ZCSRnzROfM[YY8kL@b6D:1
+R3
+I]bn>70:0`^0A57dI_PEiO0
+R4
+S1
+R0
+w1736068799
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/fpga.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/fpga.sv
+!i122 5
+L0 1 83
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/fpga.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new|C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/fpga.sv|
+!i113 1
+R7
+R8
+R9
+vtb_top_module
+R1
+!s110 1736069189
+!i10b 1
+!s100 YDIHc0Y==ibEG2Yh^a:b60
+R3
+IoSmgFZno^9knC@B1PR`[F1
+R4
+S1
+R0
+w1736065165
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv
+!i122 7
+L0 3 74
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new|C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv|
+!i113 1
+R7
+R8
+R9
+vtop_module
+R1
+R2
+!i10b 1
+!s100 RDUb@bI[9PZ[;GT1:2]n?1
+R3
+I]VO;oegnMV@TnInB`2c[30
+R4
+S1
+R0
+w1736061498
+8C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/top_module.sv
+FC:/SJ/Sem 7/EN3021_Digital System Design/fp/new/top_module.sv
+!i122 4
+L0 1 91
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/top_module.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new|C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/top_module.sv|
+!i113 1
+R7
+R8
+R9
