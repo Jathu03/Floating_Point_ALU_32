@@ -1,0 +1,13 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_top.v}
+vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_sub.v}
+vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_mul.v}
+vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_div.v}
+vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_add.v}
+

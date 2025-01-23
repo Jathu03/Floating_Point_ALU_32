@@ -1,0 +1,48 @@
+module floating_point_multiplier (
+    input wire clk,
+    input wire reset,
+    input wire [31:0] a, // Input A (IEEE 754 format)
+    input wire [31:0] b, // Input B (IEEE 754 format)
+    output reg [31:0] result // Result (IEEE 754 format)
+);
+
+    // Internal signals
+    reg [7:0] exp_a, exp_b, exp_result;
+    reg [23:0] mant_a, mant_b, mant_result;
+    reg sign_a, sign_b, sign_result;
+    reg [47:0] temp_result;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            result <= 32'b0;
+        end else begin
+            // Split inputs into components
+            sign_a = a[31];
+            sign_b = b[31];
+            exp_a = a[30:23];
+            exp_b = b[30:23];
+            mant_a = {1'b1, a[22:0]}; // Add implicit leading 1
+            mant_b = {1'b1, b[22:0]}; // Add implicit leading 1
+
+            // Perform multiplication of mantissas
+            temp_result = mant_a * mant_b;
+
+            // Calculate the resulting exponent
+            exp_result = exp_a + exp_b - 8'd127;
+
+            // Perform sign calculation
+            sign_result = sign_a ^ sign_b;
+
+            // Normalize the result
+            if (temp_result[47]) begin
+                mant_result = temp_result[47:24];
+                exp_result = exp_result + 1;
+            end else begin
+                mant_result = temp_result[46:23];
+            end
+
+            // Round and remove implicit 1
+            result <= {sign_result, exp_result, mant_result[22:0]};
+        end
+    end
+endmodule

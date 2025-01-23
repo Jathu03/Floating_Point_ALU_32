@@ -1,0 +1,121 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/floating_point_adder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:27 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp" C:/SJ/Sem 7/EN3021_Digital System Design/fp/floating_point_adder.sv 
+# -- Compiling module floating_point_adder
+# 
+# Top level modules:
+# 	floating_point_adder
+# End time: 14:56:27 on Jan 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp/new {C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_subtractor.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:27 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new" C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_subtractor.sv 
+# -- Compiling module floating_point_subtractor
+# 
+# Top level modules:
+# 	floating_point_subtractor
+# End time: 14:56:28 on Jan 05,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp/new {C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_multiplier.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:28 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new" C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_multiplier.sv 
+# -- Compiling module floating_point_multiplier
+# 
+# Top level modules:
+# 	floating_point_multiplier
+# End time: 14:56:28 on Jan 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp/new {C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_divider.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:28 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new" C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_divider.sv 
+# -- Compiling module floating_point_divider
+# 
+# Top level modules:
+# 	floating_point_divider
+# End time: 14:56:28 on Jan 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp/new {C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/top_module.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:28 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new" C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/top_module.sv 
+# -- Compiling module top_module
+# 
+# Top level modules:
+# 	top_module
+# End time: 14:56:28 on Jan 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp/new {C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/fpga.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:28 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new" C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/fpga.sv 
+# -- Compiling module fpga
+# 
+# Top level modules:
+# 	fpga
+# End time: 14:56:28 on Jan 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp/new {C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/binary_to_7seg.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:28 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new" C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/binary_to_7seg.sv 
+# -- Compiling module binary_to_7seg
+# 
+# Top level modules:
+# 	binary_to_7seg
+# End time: 14:56:28 on Jan 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp/new {C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:56:28 on Jan 05,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp/new" C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv 
+# -- Compiling module tb_top_module
+# 
+# Top level modules:
+# 	tb_top_module
+# End time: 14:56:29 on Jan 05,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_top_module
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb_top_module 
+# Start time: 14:56:29 on Jan 05,2025
+# Loading sv_std.std
+# Loading work.tb_top_module
+# Loading work.top_module
+# Loading work.floating_point_adder
+# Loading work.floating_point_subtractor
+# Loading work.floating_point_multiplier
+# Loading work.floating_point_divider
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Test 1: a=40080000, b=3fc00000, operation=Add -> result=40680000
+# Test 2: a=40080000, b=3fc00000, operation=Sub -> result=40280000
+# Test 3: a=40200000, b=3fa00000, operation=Mul -> result=00000200
+# Test 4: a=40a00000, b=40200000, operation=Div -> result=40000000
+# ** Note: $stop    : C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv(74)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_top_module
+# Break in Module tb_top_module at C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/tb_top_module.sv line 74
+# End time: 15:14:59 on Jan 05,2025, Elapsed time: 0:18:30
+# Errors: 0, Warnings: 0

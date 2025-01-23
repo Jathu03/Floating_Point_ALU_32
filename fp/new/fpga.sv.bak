@@ -1,0 +1,22 @@
+module fpga (
+    input wire clk,                // FPGA clock input (from oscillator or clock pin)
+    input wire reset,              // FPGA reset input (from a button or reset signal)
+    input wire [31:0] a,           // Input A (from switches or buttons)
+    input wire [31:0] b,           // Input B (from switches or buttons)
+    input wire [1:0] operation,    // Operation selector (from switches or buttons)
+    output wire [31:0] result,     // Result output (to LEDs or other display)
+    output wire [3:0] operation_led // Optional: Display operation on LEDs (for debugging)
+);
+
+    // Instantiate the top module
+    top_module top_inst (
+        .clk(clk),
+        .reset(reset),
+        .a(a),
+        .b(b),
+        .operation(operation),
+        .result(result),
+        .operation_led(operation_led)
+    );
+
+endmodule
