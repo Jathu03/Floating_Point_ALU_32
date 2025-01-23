@@ -1,5 +1,0 @@
-Warning (10268): Verilog HDL information at floating_point_adder.sv(21): always construct contains both blocking and non-blocking assignments File: C:/SJ/Sem 7/EN3021_Digital System Design/fp/floating_point_adder.sv Line: 21
-Warning (10268): Verilog HDL information at floating_point_subtractor.sv(19): always construct contains both blocking and non-blocking assignments File: C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_subtractor.sv Line: 19
-Warning (10268): Verilog HDL information at floating_point_multiplier.sv(19): always construct contains both blocking and non-blocking assignments File: C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_multiplier.sv Line: 19
-Warning (10268): Verilog HDL information at floating_point_divider.sv(20): always construct contains both blocking and non-blocking assignments File: C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/floating_point_divider.sv Line: 20
-Warning (10268): Verilog HDL information at fpga.sv(19): always construct contains both blocking and non-blocking assignments File: C:/SJ/Sem 7/EN3021_Digital System Design/fp/new/fpga.sv Line: 19
