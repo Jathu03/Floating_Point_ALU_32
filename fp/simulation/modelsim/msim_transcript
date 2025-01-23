@@ -1,0 +1,103 @@
+# Reading pref.tcl
+# do fpu_sp_top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:10 on Jan 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp" C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_top.v 
+# -- Compiling module fpu_sp_top
+# 
+# Top level modules:
+# 	fpu_sp_top
+# End time: 21:23:10 on Jan 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_sub.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:10 on Jan 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp" C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_sub.v 
+# -- Compiling module fpu_sp_sub
+# 
+# Top level modules:
+# 	fpu_sp_sub
+# End time: 21:23:10 on Jan 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_mul.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:10 on Jan 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp" C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_mul.v 
+# -- Compiling module fpu_sp_mul
+# 
+# Top level modules:
+# 	fpu_sp_mul
+# End time: 21:23:10 on Jan 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_div.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:10 on Jan 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp" C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_div.v 
+# -- Compiling module fpu_sp_div
+# 
+# Top level modules:
+# 	fpu_sp_div
+# End time: 21:23:10 on Jan 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_add.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:10 on Jan 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp" C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_add.v 
+# -- Compiling module fpu_sp_add
+# 
+# Top level modules:
+# 	fpu_sp_add
+# End time: 21:23:10 on Jan 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/SJ/Sem\ 7/EN3021_Digital\ System\ Design/fp {C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_add_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:11 on Jan 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/SJ/Sem 7/EN3021_Digital System Design/fp" C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_add_tb.v 
+# -- Compiling module fpu_sp_add_tb
+# 
+# Top level modules:
+# 	fpu_sp_add_tb
+# End time: 21:23:11 on Jan 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  fpu_sp_add_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" fpu_sp_add_tb 
+# Start time: 21:23:11 on Jan 04,2025
+# Loading work.fpu_sp_add_tb
+# Loading work.fpu_sp_add
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# PASS: 3f800000 + 40000000 = 40400000
+# PASS: 00000000 + 40400000 = 40400000
+# PASS: c0400000 + 40400000 = 00000000
+# PASS: 7f800000 + 40400000 = 7f800000
+# PASS: 7f800000 + ff800000 = 7fc00000
+# PASS: 7fc00000 + 40400000 = 7fc00000
+# PASS: 7fc00000 + 7fc00000 = 7fc00000
+# PASS: 3f800000 + bf800000 = 00000000
+# PASS: 00000001 + 3f800000 = 3f800000
+# PASS: 00000000 + 00000000 = 00000000
+# PASS: 422e3333 + 428a3d71 = 42e1570a
+# ** Note: $stop    : C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_add_tb.v(73)
+#    Time: 4750 ns  Iteration: 0  Instance: /fpu_sp_add_tb
+# Break in Module fpu_sp_add_tb at C:/SJ/Sem 7/EN3021_Digital System Design/fp/fpu_sp_add_tb.v line 73
+run
+# End time: 21:38:02 on Jan 04,2025, Elapsed time: 0:14:51
+# Errors: 0, Warnings: 0
